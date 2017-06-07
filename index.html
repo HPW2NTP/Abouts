@@ -87,18 +87,31 @@
 										</ul>
 										<a href="http://html5up.net">Design: HTML5UP</a>
 									</div>
-								</div>
+								
 							
 							</section>
+<div class="copyright">
+               &copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> Yassine Ayouch.
+            </div>
          </div>
-					
-			</div>
-			 
-
-		<!-- Scripts -->
-			<script src="assets1/js/jquery.min.js"></script>
-			<script src="assets1/js/skel.min.js"></script>
-			<script src="assets1/js/main.js"></script>
+      </div>
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/skel.min.js"></script>
+      <script src="assets/js/main.js"></script>
+      <script type="text/javascript">
+         function getAge(dateString) {
+             var today = new Date();
+             var birthDate = new Date(dateString);
+             var age = today.getFullYear() - birthDate.getFullYear();
+             var m = today.getMonth() - birthDate.getMonth();
+             if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                 age--;
+             }
+             return age;
+         }
+         $("#currentAge").html(getAge("2002/06/17"));
+         $("#ageNextYear").html(getAge("2002/06/17")+1);
+      </script>
 
 	</body>
 </html>
