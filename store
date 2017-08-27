@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no, minimal-ui" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<title>AppValley</title><!-- Path to Framework7 Library https://appvalley.vip/app/css-->
+	<link href="https://appvalley.vip/app/css/framework7.ios.min.https://appvalley.vip/app/css" rel="stylesheet">
+	<link href="https://appvalley.vip/app/css/framework7.ios.colors.min.https://appvalley.vip/app/css" rel="stylesheet"><!-- Path to your custom app styles-->
+	<link href="https://appvalley.vip/app/css/appvalley.https://appvalley.vip/app/css" rel="stylesheet">
+	<link href="http://code.ionicframework.com/ionicons/2.0.1/https://appvalley.vip/app/css/ionicons.min.https://appvalley.vip/app/css" rel="stylesheet">
+
+</head>
+<body class="theme-black layout-white">
+	<!-- Status bar overlay for fullscreen mode-->
+	<div class="statusbar-overlay"></div><!-- Panels overlay-->
+	<div class="panel-overlay"></div><!-- Left panel with reveal effect-->
+	<div class="panel panel-left panel-reveal">
+		<div class="content-block">
+			<p>Left panel content goes here</p>
+		</div>
+	</div><!-- Right panel with cover effect-->
+	<div class="panel panel-right panel-cover">
+		<div class="content-block">
+			<p>Right panel content goes here</p>
+		</div>
+	</div><!-- Views, and they are tabs-->
+	<!-- We need to set "toolbar-through" class on it to keep space for our tab bar-->
+	<div class="views tabs toolbar-through">
+		<!-- Your first view, it is also a .tab and should have "active" class to make it visible by default-->
+		<div class="view tab active" id="view-1">
+			<!-- We can make with view with navigation, let's add Top Navbar-->
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="left">
+
+					</div>
+					<div class="center sliding">
+						AppValley Beta
+					</div>
+				<div class="right">
+					<a href=""javascript://" onClick="window.open('//twitter.com/appvalley_vip','_system')""><img class="icon icons8-Twitter-Filled" width="25" height="25" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAEL0lEQVRoQ+1ZTVIaQRT+3jCou3iDaJXjNpPAPniCkBMEN1FW6gnEE4SsINlIThByA1wHErKFVGlOoNmpzMxL9eDgMMxPNzbRsmQjMq/f66+/99dvCI/kQ48EB56APDQmnxjRxYjdOF3L55zn7GGVDFwIvd/fWyeq+u+FEfv4dNW8dvaYuUKgteimGQIQt13OH/Wr62dJoIQejEZr/feb/Skg9ueBLX5UPQ0V+cKn32UwHxOwKrWOUOvuWEdhWcFijkaHBKo4Br+cAiIemuSceszbP6qbLSkjikKvPg33DcYHxWVgcMswqMUeygCXALKFDga+9Xatsvg+YSRsJECpajBN/lVjUDGIjnXpZOCvu2yu9bfX/biaACk2hh0QXgeGdDIzdgXnp7Q7ZaD1QRhcEi4l4iR37ZYmQArN4XnUkC4whcagRUTvdLDB4F8g4wPYEzFmA1R2Dd66ZaQ55DhDDLTdZXM7oFB1M36GunLOVdfJygeHHWJk0CfQi3gwfEZM292q1ZE1EMjpjo2wfQZ97O1u7KfGSCI7bB6k5fboumJjWAPhUPUAsuSjbh9i5HedwHtZCsZpj1tZxSrQU2jK65Wx7dsnetvb2WiH5SdAgjoiq+xGrsNELXcp9y0phhYBpLtrzXQkUz9EU7AqKBA6YPSdZfMkALYI18oEcpPvRd/yTBFErDiD/T4prp+aV7+oIb1da6a9maFI9ELE/HVeQwtfxzjpVq1S1E44/Z6CjJrwd1EpwdzSxYxWcFlAipGCKNxCp0voAhOuHbFZ646BrmufmXo8wsGPHaue6FrzttiZljULJHXmt3VEdJFXztmDjIubw0jKWFMtivhnETlfJyHM/KVX3azE6ZxJvw85VtKuFTNA/IvK1aiT1AnrPGEVXdEbYWKwRx8sokdS2XhUNs2tZmIkuthvWTCqgah830nAYXM97foQO9cSYyGT6c0EGEO0BDNtwV1OWGVtFhupjBSaw4v7ZiEAm8VGKpCHUiCTWhLpYL+pK1MjIhV30CHLjD/uimnLDD5SZ7/3nooZW7IDj8wh9hiMW5O9z+tgQuhIag6T9GcCCRYWG8MSE/YJuM1munYd0SOTpZRiJG6f/sDt0rHZry1yUxclvAkXpywd0oyEFRWagz2AarpmuYFuMQ51l/MlmeC+EyPF5lC4lZjsaS+O87hTGEwmI36bYrivwV5tUVdf1cCOczMS7UgeNDX+8Ty2x5u+famS5aPzPPddyUBFx1sy8tPr5aiua+wvA0i05MSod6tWTUZeRmZqZCo63UUCCgA4K2Z9noBOAxR7sTKunQqN37jGvmaQOaGwjHAhZtS9lXxbN4DATnqL8nlgGy5sElmKxF9JYIwTf1xqGG13KddZ1OaVslb09IOCGMeKA/NM5d2JKrNKrqVT+f/UlVlH/udm7mLr0QD5B01m8Q72qY9RAAAAAElFTkSuQmCC"></a>
+				</div>
+				</div>
+			</div>
+			<div class="pages navbar-through">
+				<div class="page" data-page="index">
+					<div class="page-content">
+						<center>
+							<a href="categories/apps.html"><img class="img-responsive" src="https://appvalley.vip/app/img/banner.png"></a>
+						</center><br>
+						         <div class="content-block" style="margin-top:-19px;">
+      <div class="content-block-inner">
+						
+							<h2 style="color:#383838; margin-top:3px; margin-left:15px; text-align:left;"><b>Featured &#x203A;</b></h2>
+						<!--    <div class="content-block">
+                                <div class="row" style="margin-top:-25px;">
+                                    <div class="col-25">
+                                        <a href="apps/spotify.html"><img class="icon" src="https://appvalley.vip/app/icon/spotify.png" width="100%">
+                                        <h5 class="homeapp-title">Spotify++</h5></a>
+                                    </div>
+                                    <div class="col-25">
+                                        <a href="assets/moviebox.html"><img class="icon" src="https://appvalley.vip/app/icon/moviebox.png" width="100%">
+                                        <h5 class="homeapp-title">MovieBox</h5></a>
+                                    </div>
+
+                                          <div class="col-25">
+                                        <a href="apps/bobbymovie.html"><img class="icon" src="https://appvalley.vip/app/icon/bobbymovie.png" width="100%">
+                                        <h5 class="homeapp-title">BobbyMovie</h5></a>
+                                    </div>
+ 
+                                    <div class="col-25">
+                                        <a href="games/pokego.html"><img class="icon" src="https://appvalley.vip/app/icon/pokego.png" width="100%">
+                                        <h5 class="homeapp-title">PokeGO++</h5></a>
+                                    </div>
+
+                                    <div class="col-25">
+                                        <a href="apps/scothman.html"><img class="icon" src="https://appvalley.vip/app/icon/scothmanicon.png" width="100%">
+                                        <h5 class="homeapp-title">SCOthman</h5></a>
+                                    </div>
+
+                                    <div class="col-25">
+                                        <a href="apps/everycord.html"><img class="icon" src="https://68.media.tumblr.com/aa94de0a9553b5190ffc5291d7cf86f4/tumblr_opxpqhxx3h1t0wlalo1_1280.png" width="100%">
+                                        <h5 class="homeapp-title">EveryCord</h5></a>
+                                    </div>
+
+                                                                               <div class="col-25">
+                                        <a href="apps/bobbymovie.html"><img class="icon" src="https://appvalley.vip/app/icon/bobbymovie.png" width="100%">
+                                        <h5 class="homeapp-title">BobbyMovie</h5></a>
+                                    </div>
+
+                                </div>
+                            </div>-->
+                   
+
+
+						<div class="swiper-container swiper-init ks-carousel-slider swiper-container-horizontal" data-height="50" data-slides-per-view="3.5" data-space-between="10">
+							<div class="swiper-wrapper">
+							
+								<div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/moviebox.html"><img class="icon" src="https://appvalley.vip/app/icon/moviebox.png" width="70%">
+											<h5 class="homeapp-title">MovieBox</h5></a>
+										</div>
+									</center>
+								</div>
+								<div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/spotify.html"><img class="icon" src="https://appvalley.vip/app/icon/spotify.png" width="70%">
+											<h5 class="homeapp-title">Spotify++</h5></a>
+										</div>
+									</center>
+								</div>
+
+								<div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/bobbymovie.html"><img class="icon" src="https://appvalley.vip/app/icon/bobbymovie.png" width="70%">
+											<h5 class="homeapp-title">BobbyMovie</h5></a> 
+										</div>
+									</center>
+								</div>
+
+								<div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/scothman.html"><img class="icon" src="https://appvalley.vip/app/icon/scothmanicon.png" width="70%">
+											<h5 class="homeapp-title">SCOthman</h5></a>
+										</div>
+									</center>
+								</div>
+
+
+								<div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="games/pokego.html"><img class="icon" src="https://appvalley.vip/app/icon/pokego.png" width="70%">
+											<h5 class="homeapp-title">PokeGO++</h5></a>
+										</div>
+									</center>
+								</div>
+								<div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/everycord.html"><img class="icon" src="https://68.media.tumblr.com/aa94de0a9553b5190ffc5291d7cf86f4/tumblr_opxpqhxx3h1t0wlalo1_1280.png" width="70%">
+											<h5 class="homeapp-title">EveryCord</h5></a>
+										</div>
+									</center>
+								</div>
+								<div class="swiper-slide" style="width: 95.1429px; margin-right: -20px;"></div>
+							</div>
+						</div>
+						 </div>
+    </div>
+      <div class="content-block" style="margin-top:-36px;">
+      <div class="content-block-inner">
+							<h2 style="color:#383838; margin-top:3px; margin-left:15px; text-align:left;"><b>UnlimApps Tweaks &#x203A;</b></h2>
+						
+						<div class="swiper-container swiper-init ks-carousel-slider swiper-container-horizontal" data-height="50" data-slides-per-view="3.5" data-space-between="10">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/snapchat++.html"><img class="icon" src="https://appvalley.vip/app/icon/snapchat.png" width="70%">
+											<h5 class="homeapp-title">SnapChat++</h5></a>
+										</div>
+									</center>
+								</div>
+
+
+
+							<div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/instagram.html"><img class="icon" src="https://appvalley.vip/app/icon/instagramrocket.png" width="70%">
+											<h5 class="homeapp-title">Instagram++</h5></a>
+										</div>
+									</center>
+								</div>
+
+			                                   <div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/youtube++.html"><img class="icon" src="https://appvalley.vip/app/icon/youtubeicon.png" width="70%">
+											<h5 class="homeapp-title">YouTube++</h5></a>
+										</div>
+									</center>
+								</div>
+
+			                                   <div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/twitter.html"><img class="icon" src="https://appvalley.vip/app/icon/twittericon.png" width="70%">
+											<h5 class="homeapp-title">Twitter++</h5></a>
+										</div>
+									</center>
+								</div>
+
+
+		                                         <div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/whatsapp.html"><img class="icon" src="https://appvalley.vip/app/icon/whatsappicon.png" width="70%">
+											<h5 class="homeapp-title">WhatsApp++</h5></a>
+										</div>
+									</center>
+								</div>
+
+			                                   <div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/fb.html"><img class="icon" src="https://appvalley.vip/app/icon/facebookicon.png" width="70%">
+											<h5 class="homeapp-title">Facebook++</h5></a>
+										</div>
+									</center>
+								</div>
+
+
+
+								
+
+								
+								
+								<div class="swiper-slide" style="width: 95.1429px; margin-right: -20px;"></div>
+							</div>
+						</div></div></div>
+						  <div class="content-block" style="margin-top:-36px;">
+      <div class="content-block-inner">
+							<h2 style="color:#383838; margin-top:3px; margin-left:15px; text-algn:left;"><b>New &#x203A;</b></h2>
+						
+						<div class="swiper-container swiper-init ks-carousel-slider swiper-container-horizontal" data-height="50" data-slides-per-view="3.5" data-space-between="10">
+							<div class="swiper-wrapper">
+
+
+								<!--<div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="games/gta3sa.html"><img class="icon" src="https://appvalley.vip/app/icon/gta3sa.png" width="70%">
+											<h5 class="homeapp-title">GTA3:SA</h5></a>
+										</div>
+									</center>
+								</div>-->
+
+								<div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="games/pacman.html"><img class="icon" src="https://appvalley.vip/app/icon/pacmanicon.png" width="70%">
+											<h5 class="homeapp-title">PAC-MAN</h5></a>
+										</div>
+									</center>
+								</div>
+
+								<div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/ipcam.html"><img class="icon" src="https://appvalley.vip/app/icon/ipcamicon.png" width="70%">
+											<h5 class="homeapp-title">IPCam Pro</h5></a>
+										</div>
+									</center>
+								</div>
+
+								<div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/tweetdeck.html"><img class="icon" src="https://appvalley.vip/app/icon/tweetdeckicon.png" width="70%">
+											<h5 class="homeapp-title">TweetDeck</h5></a>
+										</div>
+									</center>
+								</div>
+
+								<div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/lastdayonearth2.html"><img class="icon" src="https://appvalley.vip/app/icon/lastdayonearthicon.png" width="70%">
+											<h5 class="homeapp-title">LDOE v1.5.5</h5></a>
+										</div>
+									</center>
+								</div>
+
+								<div class="swiper-slide swiper-slide-active" style="width: 95.1429px; margin-right: -20px;">
+									<span></span>
+									<center>
+										<div class="col-25">
+											<a href="apps/sco&spoof.html"><img class="icon" src="https://appvalley.vip/app/icon/sco&spooficon.png" width="70%">
+											<h5 class="homeapp-title">SCO&Spoof</h5></a>
+										</div>
+									</center>
+								</div>
+
+
+
+								
+								
+								</div></div>
+
+																<div class="swiper-slide" style="width: 95.1429px; margin-right: -20px;"></div>
+							</div>
+						</div><!--<div class="content-block">
+                <div style="max-width: 500px; margin-top:-25px;">
+                  <div class="row">
+                    <div class="col-50 small-banner" style="background-color: #1DA1F2;">
+                      <a href="//twitter.com/appvalley_vip">
+                        <div class="content-block" style="color: #443f3f;">
+                          <h3>Follow us on Twitter</h3></div>
+                      </a>
+                    </div>
+                    <div class="col-50 small-banner" style="background-color: #1DA1F2;">
+                      <a href="paypal.me/appvalley">
+                        <div class="content-block" style="color: #443f3f;">
+                          <h3>Donate to the Team</h3>
+                          </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>-->
+					</div>
+				</div>
+			</div>
+		</div><!-- Second view (for second wrap)-->
+		<div class="view tab" id="view-2">
+			<!-- We can make with view with navigation, let's add Top Navbar-->
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="center sliding">
+						Library
+					</div>
+				</div>
+			</div>
+			<div class="pages navbar-through">
+				<div class="page" data-page="index">
+					<div class="page-content">
+						<div class="row">
+							<div class="col-100 tablet-50" style="margin-top:-35px;">
+								<div class="content-block inset">
+									<div class="content-block-inner library-item" style="color:#fff; background-color:#C6AC83;">
+										<center>
+											<h1>Apps</h1>
+											<h4 style="margin-top:-25px">Tweaks & App Store Apps</h4>
+											<div class="content-block" style="margin-top:-10px">
+												<a class="button color-white button-big button-round" href="categories/apps.html">Browse</a>
+											</div>
+										</center>
+									</div>
+								</div>
+							</div>
+							<div class="col-100 tablet-50" style="margin-top:-35px;">
+								<div class="content-block inset">
+									<div class="content-block-inner library-item" style="color:#fff; background-color:#ea982c;">
+										<center>
+											<h1>Games</h1>
+											<h4 style="margin-top:-25px">Hacks & Paid Games</h4>
+											<div class="content-block" style="margin-top:-10px">
+												<a class="button color-white button-big button-round" href="categories/games.html">Browse</a>
+											</div>
+										</center>
+									</div>
+								</div>
+							</div>
+							<div class="col-100 tablet-50" style="margin-top:-35px;">
+								<div class="content-block inset">
+									<div class="content-block-inner library-item" style="color:#fff; background-color:#0080FF;">
+										<center>
+											<h1>Unverified apps</h1>
+											<h4 style="margin-top:-25px">These apps are not by verified developers and you install at your own risk.</h4>
+											<div class="content-block" style="margin-top:-10px">
+												<a class="button color-white button-big button-round" href="categories/unverified.html">Browse</a>
+											</div>
+										</center>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="view tab" id="view-3">
+			<!-- We can make with view with navigation, let's add Top Navbar-->
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="center sliding">
+						About
+					</div>
+				</div>
+			</div>
+			<div class="pages navbar-through">
+				<div class="page" data-page="index">
+					<div class="page-content" style="background-image: url('img/image.png');">
+						<div class="content-block">
+							<center>
+								<h1 style="color:#065299;">AppValley</h1><br>
+								<img src="../assets/https://appvalley.vip/app/icon/valley.jpg" height="100" style="border-radius:12px; margin-top:-10px;"> 
+								<h2 style="color:#065299;">Hi, we are AppValley.<br>
+								A team of individuals who want to change the AppStore industry by providing a FREE and NO JAILBREAK solution to you.</h2>
+							</center>
+						</div>
+						<div class="content-block">
+							<center>
+								
+								<h2 style="color:#065299;"><a href="#" onClick="window.open('//www.youtube.com/user/dinozambas2')"><br>
+								Click to check out Dino Zambas</a></h2>
+
+								<h2 style="color:#065299;"><a href="#" onClick="window.open('//www.youtube.com/user/leonteiz')"><br>
+								Click to check out iDevice Central</a></h2>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- Bottom Tabbar-->
+		<div class="toolbar tabbar tabbar-labels">
+			<div class="toolbar-inner">
+				<a class="tab-link active" href="#view-1"><span class="ion-ios-home-outline" style="width: 44px; text-align: center; font-size: 25px"></span><span class="tabbar-label">Home</span></a> <a class="tab-link" href="#view-2"><span class="ion-ios-albums-outline" style="width: 44px; text-align: center; font-size: 25px"></span><span class="tabbar-label">Library</span></a> <a class="tab-link" href="#view-3"><span class="ion-ios-information-outline" style="width: 44px; text-align: center; font-size: 25px"></span><span class="tabbar-label">About</span></a>
+			</div>
+		</div>
+	</div><!-- Path to Framework7 Library JS-->
+	<script src="https://appvalley.vip/app/js/framework7.js" type="text/javascript">
+	</script> <!-- Path to your app js-->
+	 
+	<script src="https://appvalley.vip/app/js/appvalley.js" type="text/javascript">
+	</script> 
+	<script src="https://appvalley.vip/app/js/jquery.js" type="text/javascript">
+	</script> 
+	<script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-101205920-1', 'auto');
+	    ga('send', 'pageview');
+
+	</script>
+</body>
+</html>
