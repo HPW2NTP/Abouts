@@ -31,13 +31,13 @@
 		</dict>
 	</array>
 	<key>PayloadDescription</key>
-	<string>Webclip icon for your website (bthingsapp test2). Version 1.1 com.cttapp.c956480b181819b9d2d671c67a98aac9</string>
+	<string>testing ..</string>
 	<key>PayloadDisplayName</key>
-	<string>Website Profile for bthingsapp test2</string>
+	<string>yassine</string>
 	<key>PayloadIdentifier</key>
-	<string>com.cttapp.c956480b181819b9d2d671c67a98aac9</string>
+	<string>com.ayouch.yassine</string>
 	<key>PayloadOrganization</key>
-	<string>Christian Turkoanje</string>
+	<string>Yassine Ayouch</string>
 	<key>PayloadRemovalDisallowed</key>
 	<false/>
 	<key>PayloadType</key>
